@@ -4,10 +4,7 @@ var fs = require('fs');
 var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
-	var html = fs.readFileSync("./index.html", {encoding: "utf8"}, function(err, data) {
-		if(err) throw err;
-		console.log(data);
-	});
+	var html = fs.readFileSync("./index.html", "utf8");
 	response.send(html);
 });
 
